@@ -1,0 +1,364 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"p",
+				"print"
+			],
+			[
+				"b",
+				"b"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "#include <stdio.h>\n#include \"osapi.h\"\n#include \"user_interface.h\"\n\nvoid app_init()\n{\n    uart_div_modify(0, UART_CLK_FREQ / 115200);\n    os_delay_us(1000000);\n    os_printf(\"\\r\\nhello world\\r\\n\");\n}\n\nvoid user_init(void)\n{\n    system_init_done_cb(app_init);\n}",
+			"file": "main.c",
+			"file_size": 273,
+			"file_write_time": 131714533237536217,
+			"settings":
+			{
+				"buffer_size": 259,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "//esp-iot-basic/rf_init.c\n#include <stdio.h>\n#include \"osapi.h\"\n#include \"user_interface.h\"\n\nvoid __attribute__((weak)) user_rf_pre_init(void)\n{\n  system_phy_set_rfoption(1);\n  system_phy_set_max_tpw(82);\n}\n\nuint32_t __attribute__((weak)) user_rf_cal_sector_set(void)\n{\n    enum flash_size_map size_map = system_get_flash_size_map();\n    uint32 rf_cal_sec = 0;\n\n    switch (size_map) {\n        case FLASH_SIZE_4M_MAP_256_256:\n            rf_cal_sec = 128 - 5;\n            break;\n\n        case FLASH_SIZE_8M_MAP_512_512:\n            rf_cal_sec = 256 - 5;\n            break;\n\n        case FLASH_SIZE_16M_MAP_512_512:\n        case FLASH_SIZE_16M_MAP_1024_1024:\n            rf_cal_sec = 512 - 5;\n            break;\n\n        case FLASH_SIZE_32M_MAP_512_512:\n        case FLASH_SIZE_32M_MAP_1024_1024:\n            rf_cal_sec = 1024 - 5;\n            break;\n\n        default:\n            rf_cal_sec = 0;\n            break;\n    }\n    return rf_cal_sec;",
+			"file": "rf_init.c",
+			"file_size": 982,
+			"file_write_time": 131714532710826090,
+			"settings":
+			{
+				"buffer_size": 943,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Makefile",
+			"settings":
+			{
+				"buffer_size": 1638,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				"Clean"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/LOC/esp-iot-basic"
+	],
+	"file_history":
+	[
+		"/C/Users/LOC/esp-iot-led-blink/main.c",
+		"/D/HOC TAP/nam4hk12018/DoAnnhung/graduation/code buil/final.py",
+		"/C/Users/LOC/Desktop/esp8266_nonos_sdk_v2.0.0_16_08_10 (1)/ESP8266_NONOS_SDK/tools/README.md",
+		"/D/PHAN MEM/Proteus 8 Professional/A.Baitap2018/CamBienSo/New Project.pdsprj",
+		"/C/Users/LOC/Downloads/locmy.py",
+		"/C/Users/LOC/Downloads/coban.py",
+		"/C/Users/LOC/Downloads/pythonnn.py",
+		"/C/Users/LOC/Downloads/pythonnn"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								259,
+								259
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "rf_init.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								943,
+								943
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1638,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								115,
+								115
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "test.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
